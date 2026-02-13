@@ -613,29 +613,23 @@ img {
   height: 56px;
 }
 
+/* ВАЖЛИВО: Перевірте, чи назви ID в icons.svg збігаються (icon-instagram тощо) */
+
+/* Футер контейнер */
 .footer-container {
   display: flex;
   align-items: baseline;
 }
 
-.footer-logo-container {
+.footer-info {
   margin-right: 120px;
 }
 
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 16px;
-  color: var(--light-color);
+.footer-socials {
+  margin-right: 80px;
 }
 
-.footer-text {
-  max-width: 264px;
-  line-height: 1.5;
-  color: var(--light-color);
-  letter-spacing: 0.02em;
-}
-
-.footer-social-title {
+.footer-caption {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -644,20 +638,51 @@ img {
   margin-bottom: 16px;
 }
 
-.footer-social-list {
+/* Соціальні лінки (Пункт про transition та hover) */
+.social-link {
   display: flex;
-  gap: 16px;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-brand-color);
+  border-radius: 50%;
+  transition: background-color var(--transition-dur-func);
+  /* D6 */
 }
 
-.footer-social-list .social-icon {
-  width: 24px;
-  height: 24px;
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--pressed-state-color);
 }
 
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--success-color);
+}
+
+/* Поле підписки (Пункт про фокус та бордер) */
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  border: 1px solid var(--white-color);
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  color: var(--white-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  transition: border-color var(--transition-dur-func);
+}
+
+.subscribe-input::placeholder {
+  color: var(--white-color);
+  /* Стилізація placeholder */
+}
+
+.subscribe-input:focus {
+  border-color: var(--primary-brand-color);
+  outline: none;
 }
